@@ -30,9 +30,9 @@
     </div>
     <script>
         let item1 = document.getElementById('img1').children[0];
-        console.log(item1.src);
+        // console.log(item1.src);
         let item2 = document.getElementById('img2').children[0];
-        console.log(item2.src);
+        // console.log(item2.src);
         let item3 = document.getElementById('img3').children[0];
         let item4 = document.getElementById('img4').children[0];
         let item9 = document.getElementById('img9').children[0];
@@ -50,10 +50,12 @@
                  previousEvent=0;
                  previousEventName = item1;
                 }
-                console.log(previousEvent);
+                console.log("fun1 "+previousEvent);
+                console.log("fun1 "+ previousEventName.src);
                 console.log("in if block of fun1");
             }else{
-                console.log(previousEvent);
+                console.log("fun1 "+previousEvent);
+                console.log("fun1 "+previousEventName.src);
                 console.log("in else block of fun1");
                 if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item1.setAttribute('src','http://127.0.0.1:5500/images.png');
@@ -64,45 +66,18 @@
                   if(item1.src == previousEvSrc){
                     // previousEventName.removeEventListener('click',fun1);
                     // item1.removeEventListener('click',fun9);
-                    previousEvent=1;
+                    // previousEvent=1;
                   }else{
                        item1.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                       previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                       previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    //    previousEventName=0;
                     }
+                    console.log("fun1 "+previousEventName.src);
                 },400);
 
             }
         }
         item1.addEventListener('click',fun1); 
-
-        // function fun9() {
-        //     if(previousEvent){
-        //         if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
-        //          item9.setAttribute('src','http://127.0.0.1:5500/images.png');
-        //          previousEvSrc = item9.src;
-        //          previousEvent=0;
-        //          previousEventName = item9;
-        //         }
-        //         console.log(previousEvent);
-        //         console.log("in if block of fun9");
-        //     }else{
-        //         console.log("in else block of fun9");
-        //         if (item9.src == 'http://127.0.0.1:5500/smile.jpg') {
-        //          item9.setAttribute('src','http://127.0.0.1:5500/images.png');
-        //         }
-        //         setTimeout( function(){
-        //           if(item9.src == previousEvSrc){
-        //               previousEventName.removeEventListener('click',fun1);
-        //               item9.removeEventListener('click',fun9);
-        //           }else{
-        //                item9.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-        //                previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-        //             }
-        //         },1000);
-
-        //     }
-        // }
-        // item9.addEventListener('click',fun9); 
 
         item2.addEventListener('click', function fun2() {
             if(previousEvent){
@@ -112,25 +87,28 @@
                  previousEvent=0;
                  previousEventName = item2;
                 }
-                console.log(previousEvent);
+                console.log("fun2 "+previousEvent);
+                console.log("fun2 "+previousEventName.src);
                 console.log("in if block of fun2");
             }else{
-                console.log(previousEvent);
+                console.log("fun2 "+previousEvent);
+                console.log("fun2 "+previousEventName.src);
                 console.log("in else block of fun2");
                 // console.log(previousEventName);
                 if (item2.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item2.setAttribute('src','http://127.0.0.1:5500/html1.png');
                  previousEvent=1;
                 }
-                console.log(previousEvent);
+                console.log("fun2 "+previousEvent);
                 setTimeout( function(){
                   if(item2.src == previousEvSrc){
                     // previousEvent=1;
                   }else{
                         previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                        item2.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                        {once:false}
+                        item2.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                        // previousEventName=0;
                     }
+                    console.log("fun2 "+previousEventName.src);
                 },400)
             }
         }); 
@@ -144,27 +122,58 @@
                  previousEventName = item3;
                 }
                 // console.log(previousEvSrc);
-                console.log(previousEvent);
+                console.log("fun3 "+previousEvent);
+                console.log("fun3 "+previousEventName.src);
                 console.log("in if block of fun3");
             }else{
-                console.log(previousEvent);
+                console.log("fun3 "+previousEvent);
+                console.log("fun3 "+previousEventName.src);
                 console.log("in else block of fun3");
                 if (item3.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item3.setAttribute('src','http://127.0.0.1:5500/css.jpeg');
                  previousEvent=1;
                 }
-                console.log(previousEvent);
+                console.log("fun3 "+previousEvent);
                 setTimeout( function(){
                   if(item3.src == previousEvSrc){
-                      alert("successful");
+                    //   alert("successful");
                   }else{
                     previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                       item3.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                    item3.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                    // previousEventName=0;
                     }
+                    console.log("fun3 "+previousEventName.src);
                 },400)
             }
         }); 
+        function fun9() {
+            if(previousEvent){
+                if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item9.setAttribute('src','http://127.0.0.1:5500/images.png');
+                 previousEvSrc = item9.src;
+                 previousEvent=0;
+                 previousEventName = item9;
+                }
+                console.log(previousEvent);
+                console.log("in if block of fun9");
+            }else{
+                console.log("in else block of fun9");
+                if (item9.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item9.setAttribute('src','http://127.0.0.1:5500/images.png');
+                }
+                setTimeout( function(){
+                  if(item9.src == previousEvSrc){
+                      previousEventName.removeEventListener('click',fun1);
+                      item9.removeEventListener('click',fun9);
+                  }else{
+                       item9.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                       previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                    }
+                },1000);
 
+            }
+        }
+        item9.addEventListener('click',fun9); 
         // adding event by click
         // item1.addEventListener('click', function run() {
         //     if (item1.style.opacity == '0') {
