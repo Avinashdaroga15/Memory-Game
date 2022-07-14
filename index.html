@@ -11,23 +11,207 @@
 
 <body>
     <div class="container">
-        <div class="img1 img"><img src="images.png" alt="image of node js"></div>
-        <div class="img2 img"><img src="html1.png" alt="image of html logo"></div>
-        <div class="img3 img"><img src="css.jpeg" alt="image of css logo"></div>
-        <div class="img4 img"><img src="C_Programming_Language.svg.png" alt="image of c C_Programming_Language "></div>
-        <div class="img5 img"><img src="bootstrap-stack.png" alt="image of bootstrap-stack"></div>
-        <div class="img6 img"><img src="JavaScript-Logo.png" alt="image of js"></div>
-        <div class="img7 img"><img src="jquery.png" alt="image of jquery"></div>
-        <div class="img8 img"><img src="python-logo.png" alt="image of python-logo"></div>
-        <div class="img9 img"><img src="images.png" alt="image of node js"></div>
-        <div class="img10 img"><img src="html1.png" alt="image of html logo"></div>
-        <div class="img11 img"><img src="css.jpeg" alt="image of css logo"></div>
-        <div class="img12 img"><img src="C_Programming_Language.svg.png" alt="image of c C_Programming_Language "></div>
-        <div class="img13 img"><img src="bootstrap-stack.png" alt="image of bootstrap-stack"></div>
-        <div class="img14 img"><img src="JavaScript-Logo.png" alt="image of js"></div>
-        <div class="img15 img"><img src="jquery.png" alt="image of jquery"></div>
-        <div class="img16 img"><img src="python-logo.png" alt="image of python-logo"></div>
+        <div class="img" id="img1"><img src="smile.jpg" alt="image of node js"></div>
+        <div class="img" id="img2"><img src="smile.jpg" alt="image of html logo"></div>
+        <div class="img" id="img3"><img src="smile.jpg" alt="image of css logo"></div>
+        <div class="img" id="img4"><img src="smile.jpg" class="img4" alt="image of c C_Programming_Language "></div>
+        <div class="img" id="img5"><img src="smile.jpg" alt="image of bootstrap-stack"></div>
+        <div class="img" id="img6"><img src="smile.jpg" alt="image of js"></div>
+        <div class="img" id="img7"><img src="smile.jpg" alt="image of jquery"></div>
+        <div class="img" id="img8"><img src="smile.jpg" alt="image of python-logo"></div>
+        <div class="img" id="img9"><img src="smile.jpg" alt="image of node js"></div>
+        <div class="img" id="img10"><img src="html1.png" alt="image of html logo"></div>
+        <div class="img" id="img11"><img src="css.jpeg" alt="image of css logo"></div>
+        <div class="img" id="img12"><img src="C_Programming_Language.svg.png" alt="image of c C_Programming_Language "></div>
+        <div class="img" id="img13"><img src="bootstrap-stack.png" alt="image of bootstrap-stack"></div>
+        <div class="img" id="img14"><img src="JavaScript-Logo.png" alt="image of js"></div>
+        <div class="img" id="img15"><img src="jquery.png" alt="image of jquery"></div>
+        <div class="img" id="img16"><img src="python-logo.png" alt="image of python-logo"></div>
     </div>
+    <script>
+        let item1 = document.getElementById('img1').children[0];
+        console.log(item1.src);
+        let item2 = document.getElementById('img2').children[0];
+        console.log(item2.src);
+        let item3 = document.getElementById('img3').children[0];
+        let item4 = document.getElementById('img4').children[0];
+        let item9 = document.getElementById('img9').children[0];
+
+        let previousEvSrc;
+        let previousEvent=1;
+        let previousEventName;
+        console.log(previousEvent);
+        // console.log(previousEvSrc); 
+        function fun1() {
+            if(previousEvent){
+                if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item1.setAttribute('src','http://127.0.0.1:5500/images.png');
+                 previousEvSrc = item1.src;
+                 previousEvent=0;
+                 previousEventName = item1;
+                }
+                console.log(previousEvent);
+                console.log("in if block of fun1");
+            }else{
+                console.log(previousEvent);
+                console.log("in else block of fun1");
+                if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item1.setAttribute('src','http://127.0.0.1:5500/images.png');
+                 previousEvent=1;
+                }
+                console.log(previousEvent);
+                setTimeout( function(){
+                  if(item1.src == previousEvSrc){
+                    // previousEventName.removeEventListener('click',fun1);
+                    // item1.removeEventListener('click',fun9);
+                    previousEvent=1;
+                  }else{
+                       item1.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                       previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                    }
+                },400);
+
+            }
+        }
+        item1.addEventListener('click',fun1); 
+
+        // function fun9() {
+        //     if(previousEvent){
+        //         if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
+        //          item9.setAttribute('src','http://127.0.0.1:5500/images.png');
+        //          previousEvSrc = item9.src;
+        //          previousEvent=0;
+        //          previousEventName = item9;
+        //         }
+        //         console.log(previousEvent);
+        //         console.log("in if block of fun9");
+        //     }else{
+        //         console.log("in else block of fun9");
+        //         if (item9.src == 'http://127.0.0.1:5500/smile.jpg') {
+        //          item9.setAttribute('src','http://127.0.0.1:5500/images.png');
+        //         }
+        //         setTimeout( function(){
+        //           if(item9.src == previousEvSrc){
+        //               previousEventName.removeEventListener('click',fun1);
+        //               item9.removeEventListener('click',fun9);
+        //           }else{
+        //                item9.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+        //                previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+        //             }
+        //         },1000);
+
+        //     }
+        // }
+        // item9.addEventListener('click',fun9); 
+
+        item2.addEventListener('click', function fun2() {
+            if(previousEvent){
+                if (item2.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item2.setAttribute('src','http://127.0.0.1:5500/html1.png');
+                 previousEvSrc = item2.src;
+                 previousEvent=0;
+                 previousEventName = item2;
+                }
+                console.log(previousEvent);
+                console.log("in if block of fun2");
+            }else{
+                console.log(previousEvent);
+                console.log("in else block of fun2");
+                // console.log(previousEventName);
+                if (item2.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item2.setAttribute('src','http://127.0.0.1:5500/html1.png');
+                 previousEvent=1;
+                }
+                console.log(previousEvent);
+                setTimeout( function(){
+                  if(item2.src == previousEvSrc){
+                    // previousEvent=1;
+                  }else{
+                        previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                        item2.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                        {once:false}
+                    }
+                },400)
+            }
+        }); 
+
+        item3.addEventListener('click', function fun3() {
+            if(previousEvent){
+                if (item3.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item3.setAttribute('src','http://127.0.0.1:5500/css.jpeg');
+                 previousEvSrc = item3.src;
+                 previousEvent=0;
+                 previousEventName = item3;
+                }
+                // console.log(previousEvSrc);
+                console.log(previousEvent);
+                console.log("in if block of fun3");
+            }else{
+                console.log(previousEvent);
+                console.log("in else block of fun3");
+                if (item3.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item3.setAttribute('src','http://127.0.0.1:5500/css.jpeg');
+                 previousEvent=1;
+                }
+                console.log(previousEvent);
+                setTimeout( function(){
+                  if(item3.src == previousEvSrc){
+                      alert("successful");
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                       item3.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                    }
+                },400)
+            }
+        }); 
+
+        // adding event by click
+        // item1.addEventListener('click', function run() {
+        //     if (item1.style.opacity == '0') {
+        //         item2[0].setAttribute('src','smile.jpg')
+        //     } else {
+        //         item1.style.opacity = '0';
+        //     }
+        // }); 
+        // item1.addEventListener('click', function run() {
+        //         if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
+        //            item1.setAttribute('src','http://127.0.0.1:5500/images.png')
+        //         // alert("Hare Krsna")
+        //         }
+        //     }); 
+        // item2.addEventListener('click', function run() {
+        //     if (item2.src == 'http://127.0.0.1:5500/smile.jpg') {
+        //        item2.setAttribute('src','http://127.0.0.1:5500/html1.png');
+        //     }
+        //     setTimeout( function(){
+        //         if(item1.src == item2.src){
+        //             alert("successful");
+        //         }else{
+        //              item1.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+        //              item2.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+        //          }
+        //     },1000)
+        // }); 
+        // item3.addEventListener('click', function run() {
+        //         if (item3.src == 'http://127.0.0.1:5500/smile.jpg') {
+        //            item3.setAttribute('src','http://127.0.0.1:5500/css.jpeg')
+        //         // alert("Hare Krsna")
+        //         }
+        //     }); 
+        // item4.addEventListener('click', function run() {
+        //     if (item4.src == 'http://127.0.0.1:5500/smile.jpg') {
+        //        item4.setAttribute('src','http://127.0.0.1:5500/C_Programming_Language.svg.png');
+        //     }
+        //     setTimeout( function(){
+        //         if(item3.src == item4.src){
+        //             alert("successful");
+        //         }else{
+        //              item3.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+        //              item4.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+        //          }
+        //     },1000);
+        // });       
+    </script>
 </body>
 
 </html>
