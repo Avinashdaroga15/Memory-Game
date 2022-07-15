@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-.container {
+.img-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -19,6 +19,15 @@ img{
     height: 150px;
     overflow: visible;
     background-color: blueviolet;
+}
+.head-container{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    /* grid-template-rows: 1fr; */
+}
+.left-side{
+    padding-left: 20px;
 }
 /* #img4,#img12{
     width: 120px;
