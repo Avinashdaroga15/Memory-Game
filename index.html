@@ -20,29 +20,41 @@
         <div class="img" id="img7"><img src="smile.jpg" alt="image of jquery"></div>
         <div class="img" id="img8"><img src="smile.jpg" alt="image of python-logo"></div>
         <div class="img" id="img9"><img src="smile.jpg" alt="image of node js"></div>
-        <div class="img" id="img10"><img src="html1.png" alt="image of html logo"></div>
-        <div class="img" id="img11"><img src="css.jpeg" alt="image of css logo"></div>
-        <div class="img" id="img12"><img src="C_Programming_Language.svg.png" alt="image of c C_Programming_Language "></div>
-        <div class="img" id="img13"><img src="bootstrap-stack.png" alt="image of bootstrap-stack"></div>
-        <div class="img" id="img14"><img src="JavaScript-Logo.png" alt="image of js"></div>
-        <div class="img" id="img15"><img src="jquery.png" alt="image of jquery"></div>
-        <div class="img" id="img16"><img src="python-logo.png" alt="image of python-logo"></div>
+        <div class="img" id="img10"><img src="smile.jpg" alt="image of html logo"></div>
+        <div class="img" id="img11"><img src="smile.jpg" alt="image of css logo"></div>
+        <div class="img" id="img12"><img src="smile.jpg" alt="image of c C_Programming_Language "></div>
+        <div class="img" id="img13"><img src="smile.jpg" alt="image of bootstrap-stack"></div>
+        <div class="img" id="img14"><img src="smile.jpg" alt="image of js"></div>
+        <div class="img" id="img15"><img src="smile.jpg" alt="image of jquery"></div>
+        <div class="img" id="img16"><img src="smile.jpg" alt="image of python-logo"></div>
     </div>
     <script>
         let item1 = document.getElementById('img1').children[0];
-        // console.log(item1.src);
+        console.log(item1);
         let item2 = document.getElementById('img2').children[0];
         // console.log(item2.src);
         let item3 = document.getElementById('img3').children[0];
         let item4 = document.getElementById('img4').children[0];
+        let item5 = document.getElementById('img5').children[0];
+        let item6 = document.getElementById('img6').children[0];
+        let item7 = document.getElementById('img7').children[0];
+        let item8 = document.getElementById('img8').children[0];
         let item9 = document.getElementById('img9').children[0];
-
+        let item10 = document.getElementById('img10').children[0];
+        let item11 = document.getElementById('img11').children[0];
+        let item12 = document.getElementById('img12').children[0];
+        let item13 = document.getElementById('img13').children[0];
+        let item14 = document.getElementById('img14').children[0];
+        let item15 = document.getElementById('img15').children[0];
+        let item16 = document.getElementById('img16').children[0];
+        
         let previousEvSrc;
         let previousEvent=1;
         let previousEventName;
+        let success=0;
         console.log(previousEvent);
-        // console.log(previousEvSrc); 
-        function fun1() {
+        // console.log(previousEvSrc);    
+        item1.addEventListener('click',function fun1() {
             if(previousEvent){
                 if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item1.setAttribute('src','http://127.0.0.1:5500/images.png');
@@ -50,34 +62,29 @@
                  previousEvent=0;
                  previousEventName = item1;
                 }
-                console.log("fun1 "+previousEvent);
-                console.log("fun1 "+ previousEventName.src);
-                console.log("in if block of fun1");
             }else{
-                console.log("fun1 "+previousEvent);
-                console.log("fun1 "+previousEventName.src);
-                console.log("in else block of fun1");
                 if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item1.setAttribute('src','http://127.0.0.1:5500/images.png');
                  previousEvent=1;
                 }
-                console.log(previousEvent);
                 setTimeout( function(){
                   if(item1.src == previousEvSrc){
-                    // previousEventName.removeEventListener('click',fun1);
-                    // item1.removeEventListener('click',fun9);
-                    // previousEvent=1;
+                    previousEventName.removeEventListener('click',fun9);
+                    item1.removeEventListener('click',fun1);
+                    success++;
+                    previousEvent=1;
+                    previousEventName=" ";
+                    if(success==7){
+                    alert("Great You have won game");
+                    }
                   }else{
                        item1.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
                        previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
-                    //    previousEventName=0;
+                       previousEventName=" ";
                     }
-                    console.log("fun1 "+previousEventName.src);
                 },400);
-
             }
-        }
-        item1.addEventListener('click',fun1); 
+        }); 
 
         item2.addEventListener('click', function fun2() {
             if(previousEvent){
@@ -87,28 +94,27 @@
                  previousEvent=0;
                  previousEventName = item2;
                 }
-                console.log("fun2 "+previousEvent);
-                console.log("fun2 "+previousEventName.src);
-                console.log("in if block of fun2");
             }else{
-                console.log("fun2 "+previousEvent);
-                console.log("fun2 "+previousEventName.src);
-                console.log("in else block of fun2");
-                // console.log(previousEventName);
                 if (item2.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item2.setAttribute('src','http://127.0.0.1:5500/html1.png');
                  previousEvent=1;
                 }
-                console.log("fun2 "+previousEvent);
                 setTimeout( function(){
                   if(item2.src == previousEvSrc){
-                    // previousEvent=1;
-                  }else{
-                        previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                        item2.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
-                        // previousEventName=0;
+                    previousEventName.removeEventListener('click',fun10);
+                    item2.removeEventListener('click',fun2);
+                    success++;
+                    previousEvent=1;
+                    previousEventName=" ";
+                    if(success==7){
+                    alert("Great You have won game");
                     }
-                    console.log("fun2 "+previousEventName.src);
+                  }else{
+                        previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                        item2.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                        previousEventName=" ";
+                    }
+                    
                 },400)
             }
         }); 
@@ -121,32 +127,198 @@
                  previousEvent=0;
                  previousEventName = item3;
                 }
-                // console.log(previousEvSrc);
-                console.log("fun3 "+previousEvent);
-                console.log("fun3 "+previousEventName.src);
-                console.log("in if block of fun3");
             }else{
-                console.log("fun3 "+previousEvent);
-                console.log("fun3 "+previousEventName.src);
-                console.log("in else block of fun3");
                 if (item3.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item3.setAttribute('src','http://127.0.0.1:5500/css.jpeg');
                  previousEvent=1;
                 }
-                console.log("fun3 "+previousEvent);
                 setTimeout( function(){
                   if(item3.src == previousEvSrc){
-                    //   alert("successful");
-                  }else{
-                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                    item3.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                    // previousEventName=0;
+                    previousEventName.removeEventListener('click',fun11);
+                    item3.removeEventListener('click',fun3);
+                    previousEvent=1;
+                    success++;
+                    previousEventName=" ";
+                    if(success==7){
+                    alert("Great You have won game");
                     }
-                    console.log("fun3 "+previousEventName.src);
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item3.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
                 },400)
             }
+            
         }); 
-        function fun9() {
+
+        item4.addEventListener('click', function fun4() {
+            if(previousEvent){
+                if (item4.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item4.setAttribute('src','http://127.0.0.1:5500/C_Programming_Language.svg.png');
+                 previousEvSrc = item4.src;
+                 previousEvent=0;
+                 previousEventName = item4;
+                }
+            }else{
+                if (item4.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item4.setAttribute('src','http://127.0.0.1:5500/C_Programming_Language.svg.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item4.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun12);
+                    item4.removeEventListener('click',fun4);
+                    previousEvent=1;
+                    success++;
+                    previousEventName=" ";
+                    if(success==7){
+                    alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item4.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+            
+        }); 
+
+        item5.addEventListener('click', function fun5() {
+            if(previousEvent){
+                if (item5.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item5.setAttribute('src','http://127.0.0.1:5500/bootstrap-stack.png');
+                 previousEvSrc = item5.src;
+                 previousEvent=0;
+                 previousEventName = item5;
+                }
+            }else{
+                if (item5.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item5.setAttribute('src','http://127.0.0.1:5500/bootstrap-stack.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item5.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun13);
+                    item5.removeEventListener('click',fun5);
+                    previousEvent=1;
+                    success++;
+                    previousEventName=" ";
+                    if(success==7){
+                    alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item5.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+               
+            }
+        }); 
+        item6.addEventListener('click', function fun6() {
+            if(previousEvent){
+                if (item6.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item6.setAttribute('src','http://127.0.0.1:5500/JavaScript-Logo.png');
+                 previousEvSrc = item6.src;
+                 previousEvent=0;
+                 previousEventName = item6;
+                }
+            }else{
+                if (item6.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item6.setAttribute('src','http://127.0.0.1:5500/JavaScript-Logo.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item6.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun14);
+                    item6.removeEventListener('click',fun6);
+                    previousEvent=1;
+                    success++;
+                    previousEventName=" ";
+                    if(success==7){
+                     alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item6.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);               
+            }
+        }); 
+       
+        item7.addEventListener('click', function fun7() {
+            if(previousEvent){
+                if (item7.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item7.setAttribute('src','http://127.0.0.1:5500/jquery.png');
+                 previousEvSrc = item7.src;
+                 previousEvent=0;
+                 previousEventName = item7;
+                }
+            }else{
+                if (item7.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item7.setAttribute('src','http://127.0.0.1:5500/jquery.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item7.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun15);
+                    item7.removeEventListener('click',fun7);
+                    previousEvent=1;
+                    success++;
+                    previousEventName=" ";
+                    if(success==7){
+                    alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item7.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+        }); 
+
+        item8.addEventListener('click', function fun8() {
+            if(previousEvent){
+                if (item8.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item8.setAttribute('src','http://127.0.0.1:5500/python-logo.png');
+                 previousEvSrc = item8.src;
+                 previousEvent=0;
+                 previousEventName = item8
+                }
+            }else{
+                if (item8.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item8.setAttribute('src','http://127.0.0.1:5500/python-logo.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item8.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun16);
+                    item8.removeEventListener('click',fun8);
+                    previousEvent=1;
+                    success++;
+                    previousEventName=" ";
+                    if(success==7){
+                     alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item8.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+        });
+        item9.addEventListener('click',function fun9() {
             if(previousEvent){
                 if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item9.setAttribute('src','http://127.0.0.1:5500/images.png');
@@ -154,72 +326,258 @@
                  previousEvent=0;
                  previousEventName = item9;
                 }
-                console.log(previousEvent);
-                console.log("in if block of fun9");
             }else{
-                console.log("in else block of fun9");
+                // console.log("in else block of fun9");
                 if (item9.src == 'http://127.0.0.1:5500/smile.jpg') {
                  item9.setAttribute('src','http://127.0.0.1:5500/images.png');
+                 previousEvent=1;
                 }
                 setTimeout( function(){
                   if(item9.src == previousEvSrc){
                       previousEventName.removeEventListener('click',fun1);
                       item9.removeEventListener('click',fun9);
+                      previousEventName=" ";
+                      success++;
+                      previousEventName=" ";
+                      if(success==7){
+                        alert("Great You have won game");
+                        }
                   }else{
                        item9.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-                       previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
+                       previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                       previousEventName=" ";
                     }
-                },1000);
-
+                },400);
             }
-        }
-        item9.addEventListener('click',fun9); 
-        // adding event by click
-        // item1.addEventListener('click', function run() {
-        //     if (item1.style.opacity == '0') {
-        //         item2[0].setAttribute('src','smile.jpg')
-        //     } else {
-        //         item1.style.opacity = '0';
-        //     }
-        // }); 
-        // item1.addEventListener('click', function run() {
-        //         if (item1.src == 'http://127.0.0.1:5500/smile.jpg') {
-        //            item1.setAttribute('src','http://127.0.0.1:5500/images.png')
-        //         // alert("Hare Krsna")
-        //         }
-        //     }); 
-        // item2.addEventListener('click', function run() {
-        //     if (item2.src == 'http://127.0.0.1:5500/smile.jpg') {
-        //        item2.setAttribute('src','http://127.0.0.1:5500/html1.png');
-        //     }
-        //     setTimeout( function(){
-        //         if(item1.src == item2.src){
-        //             alert("successful");
-        //         }else{
-        //              item1.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-        //              item2.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-        //          }
-        //     },1000)
-        // }); 
-        // item3.addEventListener('click', function run() {
-        //         if (item3.src == 'http://127.0.0.1:5500/smile.jpg') {
-        //            item3.setAttribute('src','http://127.0.0.1:5500/css.jpeg')
-        //         // alert("Hare Krsna")
-        //         }
-        //     }); 
-        // item4.addEventListener('click', function run() {
-        //     if (item4.src == 'http://127.0.0.1:5500/smile.jpg') {
-        //        item4.setAttribute('src','http://127.0.0.1:5500/C_Programming_Language.svg.png');
-        //     }
-        //     setTimeout( function(){
-        //         if(item3.src == item4.src){
-        //             alert("successful");
-        //         }else{
-        //              item3.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-        //              item4.setAttribute('src','http://127.0.0.1:5500/smile.jpg')
-        //          }
-        //     },1000);
-        // });       
+            
+        }); 
+        
+        item10.addEventListener('click', function fun10() {
+            if(previousEvent){
+                if (item10.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item10.setAttribute('src','http://127.0.0.1:5500/html1.png');
+                 previousEvSrc = item10.src;
+                 previousEvent=0;
+                 previousEventName = item10;
+                }
+            }else{
+                if (item10.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item10.setAttribute('src','http://127.0.0.1:5500/html1.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item10.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun2);
+                    item10.removeEventListener('click',fun10);
+                    previousEvent=1;
+                    previousEventName=" ";
+                    success++;
+                    if(success==7){
+                    alert("Great You have won game");
+                    }
+                  }else{
+                        previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                        item10.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                        previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+        }); 
+        item11.addEventListener('click', function fun11() {
+            if(previousEvent){
+                if (item11.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item11.setAttribute('src','http://127.0.0.1:5500/css.jpeg');
+                 previousEvSrc = item11.src;
+                 previousEvent=0;
+                 previousEventName = item11;
+                }
+            }else{
+                if (item11.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item11.setAttribute('src','http://127.0.0.1:5500/css.jpeg');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item11.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun3);
+                    item11.removeEventListener('click',fun11);
+                    previousEvent=1;
+                    previousEventName=" ";
+                    success++;
+                    if(success==7){
+                     alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item11.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+            
+        }); 
+        item12.addEventListener('click', function fun12() {
+            if(previousEvent){
+                if (item12.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item12.setAttribute('src','http://127.0.0.1:5500/C_Programming_Language.svg.png');
+                 previousEvSrc = item12.src;
+                 previousEvent=0;
+                 previousEventName = item12;
+                }
+            }else{
+                if (item12.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item12.setAttribute('src','http://127.0.0.1:5500/C_Programming_Language.svg.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item12.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun4);
+                    item12.removeEventListener('click',fun12);
+                    previousEvent=1;
+                    previousEventName=" ";
+                    success++;
+                    if(success==7){
+                     alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item12.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+        }); 
+        item13.addEventListener('click', function fun13() {
+            if(previousEvent){
+                if (item13.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item13.setAttribute('src','http://127.0.0.1:5500/bootstrap-stack.png');
+                 previousEvSrc = item13.src;
+                 previousEvent=0;
+                 previousEventName = item13;
+                }
+            }else{
+                if (item13.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item13.setAttribute('src','http://127.0.0.1:5500/bootstrap-stack.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item13.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun5);
+                    item13.removeEventListener('click',fun13);
+                    previousEvent=1;
+                    previousEventName=" ";
+                    success++;
+                    if(success==7){
+                     alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item13.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+        }); 
+        item14.addEventListener('click', function fun14() {
+            if(previousEvent){
+                if (item14.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item14.setAttribute('src','http://127.0.0.1:5500/JavaScript-Logo.png');
+                 previousEvSrc = item14.src;
+                 previousEvent=0;
+                 previousEventName = item14;
+                }
+            }else{
+                if (item14.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item14.setAttribute('src','http://127.0.0.1:5500/JavaScript-Logo.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item14.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun6);
+                    item14.removeEventListener('click',fun14);
+                    previousEvent=1;
+                    previousEventName=" ";
+                    success++;
+                    if(success==7){
+                     alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item14.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+        }); 
+        item15.addEventListener('click', function fun15() {
+            if(previousEvent){
+                if (item15.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item15.setAttribute('src','http://127.0.0.1:5500/jquery.png');
+                 previousEvSrc = item15.src;
+                 previousEvent=0;
+                 previousEventName = item15;
+                }
+            }else{
+                if (item15.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item15.setAttribute('src','http://127.0.0.1:5500/jquery.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item15.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun7);
+                    item15.removeEventListener('click',fun15);
+                    previousEvent=1;
+                    previousEventName=" ";
+                    success++;
+                    if(success==7){
+                      alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item15.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+            }
+        }); 
+        item16.addEventListener('click', function fun16() {
+            if(previousEvent){
+                if (item16.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item16.setAttribute('src','http://127.0.0.1:5500/python-logo.png');
+                 previousEvSrc = item16.src;
+                 previousEvent=0;
+                 previousEventName = item16
+                }
+            }else{
+                if (item16.src == 'http://127.0.0.1:5500/smile.jpg') {
+                 item16.setAttribute('src','http://127.0.0.1:5500/python-logo.png');
+                 previousEvent=1;
+                }
+                setTimeout( function(){
+                  if(item16.src == previousEvSrc){
+                    previousEventName.removeEventListener('click',fun8);
+                    item16.removeEventListener('click',fun16);
+                    previousEvent=1;
+                    previousEventName=" ";
+                    success++;
+                    if(success==7){
+                     alert("Great You have won game");
+                    }
+                  }else{
+                    previousEventName.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    item16.setAttribute('src','http://127.0.0.1:5500/smile.jpg');
+                    previousEventName=" ";
+                    }
+                    
+                },400);
+               
+            }
+        });
     </script>
 </body>
 
