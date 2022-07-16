@@ -19,8 +19,8 @@ let item16 = document.getElementById('img16');
 
 let game_images = ['./img/images.png', './img/html1.png', './img/css.jpeg', './img/C_Programming_Language.svg.png', './img/bootstrap-stack.png', './img/JavaScript-Logo.png',
     './img/jquery.png', './img/python-logo.png']
-
 let smile = './img/smile.jpg';
+
 let previousEvSrc;
 let previousEvent = 1;
 let previousEventName;
@@ -29,22 +29,24 @@ let Move = 0;
 const moveDiv = document.getElementById('moves');
 const successfulMove = document.getElementById('doneMove');
 function fun(item, smil, img) {
+    
+    console.log("image",smil,"url ","."+item.src.slice(21));
     if (previousEvent) {
         console.log("Image : ",item, item.src)
-        if (item.src == smil) {
+        if ("."+item.src.slice(21) == smil) {
             item.setAttribute('src', img);
-            previousEvSrc = item.src;
+            previousEvSrc = "."+item.src.slice(21);
             previousEvent = 0;
             previousEventName = item;
         }
     }else{
-        if (item.src == smil) {
+        if ("."+item.src.slice(21) == smil) {
             item.setAttribute('src', img);
             previousEvent = 1;
             Move++;
         }
         setTimeout(function () {
-            if (item.src == previousEvSrc) {
+            if ("."+item.src.slice(21) == previousEvSrc) {
                 previousEventName.removeEventListener('click', fun);
                 item.removeEventListener('click', fun);
                 success++;
