@@ -30,7 +30,7 @@ const moveDiv = document.getElementById('moves');
 const successfulMove = document.getElementById('doneMove');
 function fun(item, smil, img) {
     
-    console.log("image",smil,"url ","."+item.src.slice(21));
+    // console.log("image",smil,"url ","."+item.src.slice(21));
     if (previousEvent) {
         console.log("Image : ",item, item.src)
         if ("."+item.src.slice(21) == smil) {
