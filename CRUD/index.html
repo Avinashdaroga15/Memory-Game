@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        } */
+    </style>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="html1.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                Bootstrap
+              </a>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div id="container" class="container mt-5 col-6" >
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button id="inpBtn" class="btn btn-outline-secondary" type="button" id="button-addon2">ADD</button>
+             </div>
+             <ul id="list" class="list-group mt-3">
+                <li class="list-group-item">chapter 1</li>
+              </ul>
+        </div>
+        
+    </main>
+    <script>
+            let inpBtn = document.getElementById('inpBtn');
+            inpBtn.addEventListener('click',addChap);
+
+            function addChap(e){
+                let currentBtn = e.currentTarget;
+                let currenttext = currentBtn.previousElementSibling.value;
+                let newLi = document.createElement("li");
+                newLi.textContent = currenttext;
+                newLi.classList.add("list-group-item")
+                let list = document.getElementById("list");
+                list.append(newLi)
+                // console.log(currenttext)
+            
+            }
+    </script>
+</body>
+
+</html>
