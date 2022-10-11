@@ -29,24 +29,25 @@ let Move = 0;
 const moveDiv = document.getElementById('moves');
 const successfulMove = document.getElementById('doneMove');
 function fun(item, smil, img) {
-    
-    // console.log("image",smil,"url ","."+item.src.slice(21));
+
+    console.log("Ram", item.src, "."+item.src.slice(46));
     if (previousEvent) {
-        console.log("Image : ",item, item.src)
-        if ("."+item.src.slice(21) == smil) {
+        // console.log("Image : ", item, item.src, "."+item.src.slice(21))
+        if ("." + item.src.slice(46) == smil) {
             item.setAttribute('src', img);
-            previousEvSrc = "."+item.src.slice(21);
+            previousEvSrc = "." + item.src.slice(46);
             previousEvent = 0;
             previousEventName = item;
+            console.log("Hare krsna");
         }
-    }else{
-        if ("."+item.src.slice(21) == smil) {
+    } else {
+        if ("." + item.src.slice(46) == smil) {
             item.setAttribute('src', img);
             previousEvent = 1;
             Move++;
         }
         setTimeout(function () {
-            if ("."+item.src.slice(21) == previousEvSrc) {
+            if ("." + item.src.slice(46) == previousEvSrc) {
                 previousEventName.removeEventListener('click', fun);
                 item.removeEventListener('click', fun);
                 success++;
@@ -55,7 +56,9 @@ function fun(item, smil, img) {
                 moveDiv.textContent = "Move : " + Move;
                 successfulMove.textContent = "Successful Moves :" + success;
                 if (success == 8) {
-                    alert("Great You have won game");
+                    setTimeout(function () {
+                        alert("Great You have won game");
+                    }, 500)
                 }
             } else {
                 item.setAttribute('src', smil)
@@ -63,23 +66,26 @@ function fun(item, smil, img) {
                 previousEventName = " ";
                 moveDiv.textContent = "Move : " + Move;
             }
+            if (success == 8) {
+                localStorage.setItem("LowestMove", success);
+            }
         }, 400);
     }
 }
 
-item1.addEventListener('click', () => { fun(item1, smile, game_images[0])});
-item2.addEventListener('click', () => { fun(item2, smile, game_images[1])});
-item3.addEventListener('click', () => { fun(item3, smile, game_images[2])});
-item4.addEventListener('click', () => { fun(item4, smile, game_images[3])});
-item5.addEventListener('click', () => { fun(item5, smile, game_images[4])});
-item6.addEventListener('click', () => { fun(item6, smile, game_images[5])});
-item7.addEventListener('click', () => { fun(item7, smile, game_images[6])});
-item8.addEventListener('click', () => { fun(item8, smile, game_images[7])});
-item9.addEventListener('click', () => { fun(item9, smile, game_images[0])});
-item10.addEventListener('click', () => { fun(item10, smile, game_images[1])});
-item11.addEventListener('click', () => { fun(item11, smile, game_images[2])});
-item12.addEventListener('click', () => { fun(item12, smile, game_images[3])});
-item13.addEventListener('click', () => { fun(item13, smile, game_images[4])});
-item14.addEventListener('click', () => { fun(item14, smile, game_images[5])});
-item15.addEventListener('click', () => { fun(item15, smile, game_images[6])});
-item16.addEventListener('click', () => { fun(item16, smile, game_images[7])});
+item1.addEventListener('click', () => { fun(item1, smile, game_images[0]) });
+item2.addEventListener('click', () => { fun(item2, smile, game_images[1]) });
+item3.addEventListener('click', () => { fun(item3, smile, game_images[2]) });
+item4.addEventListener('click', () => { fun(item4, smile, game_images[3]) });
+item5.addEventListener('click', () => { fun(item5, smile, game_images[4]) });
+item6.addEventListener('click', () => { fun(item6, smile, game_images[5]) });
+item7.addEventListener('click', () => { fun(item7, smile, game_images[6]) });
+item8.addEventListener('click', () => { fun(item8, smile, game_images[7]) });
+item9.addEventListener('click', () => { fun(item9, smile, game_images[0]) });
+item10.addEventListener('click', () => { fun(item10, smile, game_images[1]) });
+item11.addEventListener('click', () => { fun(item11, smile, game_images[2]) });
+item12.addEventListener('click', () => { fun(item12, smile, game_images[3]) });
+item13.addEventListener('click', () => { fun(item13, smile, game_images[4]) });
+item14.addEventListener('click', () => { fun(item14, smile, game_images[5]) });
+item15.addEventListener('click', () => { fun(item15, smile, game_images[6]) });
+item16.addEventListener('click', () => { fun(item16, smile, game_images[7]) });
